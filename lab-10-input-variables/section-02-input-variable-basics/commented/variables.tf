@@ -3,7 +3,7 @@
 # In this file we introduce Terraform variables with three simple examples - AWS Region, AWS AMI (Amazon Machine Image), amd
 # Count
 
-# The varibles defined in this dedicated variables file are import/utilized within the resources.tf file and aid in Resource
+# The varibles defined in this dedicated variables file are imported/utilized within the resources.tf file and aid in Resource
 # definition
 
 # Variables defined in this file consist of three primary parts.  We will use this first example of AWS region to break down

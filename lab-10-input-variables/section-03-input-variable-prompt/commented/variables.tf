@@ -18,7 +18,7 @@ variable "ec2_instance_count" {
 }
 
 # Note that this variable block has no default value (default value is present for all other variables defined in this file thus far)
-# As no default variable exists - the user will be prompted to input the variable during terraform plan/apply activities
+# As no default variable exists - the user will be prompted to input the variable valu during terraform plan/apply activities
 variable "ec2_instance_type" {
   description = "EC2 Instance Type"
   type        = string

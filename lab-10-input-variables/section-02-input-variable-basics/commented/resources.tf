@@ -1,6 +1,6 @@
 # Terraform Block
 terraform {
-  required_version = "~> 0.15.4"
+  required_version = "~> 1.0.0"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -12,14 +12,15 @@ terraform {
 # Provider Block
 provider "aws" {
   # The aws_region variable - from the variables.tf file - is called and is used to define the region value
+  # To call a variable the syntax is: var.<variable_name>
   region  = var.aws_region
   profile = "default"
 }
 
-####Note regarding lab usage of and the Resource blocks#########
+####Note regarding lab usage and the Resource blocks#########
 ####Replace all references to lab Pod Number 0 with your unqiue, assigned pod number
-####Example - terraform-key-0 - replace both the key value with your own pod number such
-#### as (terraform-key-1)
+####Example - terraform-key-0 - replace the key value with your own pod number such
+#### as "terraform-key-1" for student pod #1
 ####If preferred and for expidency/precision - considering doing a replace all such as - replace all 
 ####occurances of -0 with -1
 
@@ -49,8 +50,8 @@ resource "aws_instance" "my-ec2-vm" {
 }
 
 # Create Security Group - SSH Traffic
-resource "aws_security_group" "vpc-ssh" {
-  name        = "vpc-ssh"
+resource "aws_security_group" "vpc-ssh-0" {
+  name        = "vpc-ssh-0"
   description = "Dev VPC SSH"
   ingress {
     description = "Allow Port 22"
@@ -69,8 +70,8 @@ resource "aws_security_group" "vpc-ssh" {
 }
 
 # Create Security Group - Web Traffic
-resource "aws_security_group" "vpc-web" {
-  name        = "vpc-web"
+resource "aws_security_group" "vpc-web-0" {
+  name        = "vpc-web-0"
   description = "Dev VPC Web"
 
   ingress {
