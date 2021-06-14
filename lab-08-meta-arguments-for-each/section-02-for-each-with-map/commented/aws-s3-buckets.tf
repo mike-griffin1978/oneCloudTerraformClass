@@ -1,6 +1,6 @@
 # Terraform Block
 terraform {
-  required_version = "~> 0.15.4"
+  required_version = "~> 1.0.0"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -17,8 +17,8 @@ provider "aws" {
 
 ####Note regarding lab usage of and the Resource blocks#########
 ####Replace all references to lab Pod Number 0 with your unqiue, assigned pod number
-####Example - aws_vpc resource block - replace both the resource name (vpc-dev-1) and the tags Name
-####value (vpc-dev-1) to include your own pod number such as - "vpc-dev-<pod-number>"
+####Example - mys3bucket-0 - replace with your own lab pod number - such as the following example for
+####student pod #1 - mys3bucket-1
 ####If preferred and for expidency/precision - considering doing a replace all such as - replace all 
 ####occurances of -0 with -1
 

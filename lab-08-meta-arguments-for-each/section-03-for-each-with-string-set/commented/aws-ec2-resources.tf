@@ -1,6 +1,6 @@
 # Terraform Block
 terraform {
-  required_version = "~> 0.15.4"
+  required_version = "~> 1.0.0"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -15,16 +15,13 @@ provider "aws" {
   profile = "default"
 }
 
-# Create 3 EC2 Instances via a string map
-
 ####Note regarding lab usage of and the Resource blocks#########
-####Replace all references to lab Pod Number 0 with your unqiue, assigned pod number
-####Example - replace both the resource name (ec2-instance-0) to include your own pod number such as 
-# - "ec2-instance-<pod-number>"
+####Replace all references to lab Pod Number 0 with your unqiue assigned pod number.  Example - for student
+####assigned pod #1 - replace ec2-instance-0 with ec2-instance-1
 ####If preferred and for expidency/precision - considering doing a replace all such as - replace all 
 ####occurances of -0 with -1
 
-# Create EC2 Instance
+# Create 3 EC2 Instances via a string map
 resource "aws_instance" "ec2-instance-0" {
   # Declaration of a for_each loop
   # In this loop instance a string set is utilized.  A string set is simply an array of strings.  In this 
