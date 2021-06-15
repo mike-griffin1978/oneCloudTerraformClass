@@ -15,10 +15,10 @@ provider "aws" {
   profile = "default"
 }
 
-####Note regarding lab usage of and the Module block#########
+####Note regarding lab usage and the Resource blocks#########
 ####Replace all references to lab Pod Number 0 with your unqiue, assigned pod number
-####Example - replace both the module name (my-modules-demo-0) to include your own pod number such as 
-# - "my-modules-demo-<pod-number>"
+####Example - terraform-key-0 - replace the key value with your own pod number such
+#### as "terraform-key-1" for student pod #1
 ####If preferred and for expidency/precision - considering doing a replace all such as - replace all 
 ####occurances of -0 with -1
 

@@ -5,10 +5,10 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-####Note regarding lab usage of and the following variable blocks#########
-####Replace references to lab Pod Number 0 with your unqiue, assigned pod number
-####Example - one-cloud-bucket-0 - value with your own pod number such
-#### as (one-cloud-bucket-0)
+####Note regarding lab usage of and the local values blocks#########
+####Replace all references to lab Pod Number 0 with your unqiue, assigned pod number
+####Example - one-cloud-bucket-0 - replace  the key value with your own pod number such
+#### as (one-cloud-bucket-1) for student pod #1
 ####If preferred and for expidency/precision - considering doing a replace all such as - replace all 
 ####occurances of -0 with -1
 

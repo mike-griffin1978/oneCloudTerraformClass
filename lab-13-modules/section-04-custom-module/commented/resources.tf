@@ -1,6 +1,6 @@
 # Terraform Block
 terraform {
-  required_version = "~> 0.15.4"
+  required_version = "~> 1.0.0"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -15,7 +15,7 @@ provider "aws" {
   profile = "default"
 }
 
-# This manifest calls/utilized our Custom Terraform Module
+# This manifest calls/utilizes our Custom Terraform Module
 # The named assigned to the module within this manifest is arbitrary and could be any descript
 # naming of our choice
 module "website_s3_bucket" {
