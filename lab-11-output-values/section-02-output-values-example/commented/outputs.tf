@@ -1,16 +1,16 @@
 # Outputs definition manifest
 
 # Note that both argument and attribute output values are defined below
-# An argument is in a a value that may be passed in during the resource creation process.  Example - 
+# An argument is a value that may be passed in during the resource creation process.  Example - 
 # security groups - we may dictate what security group we want assigned during resource creation.
 # An attribute is a value that we cannot dictate and is assigned by AWS during the resource creation
-# process.  Example - public IP address - we cannot dictate the public IP address but it is assigned by AWS
+# process.  Example - public IP address - we cannot dictate the public IP address but it is assigned by AWS.
 
 #Documentation - as an augment to this example code - visit the Terrarom AWS provider > EC2 instance 
 # referenced via the URL below.  In reviewing the documentation note that there are seperate links/sections for 
 # arguments and attributes.  If desired - add a couple of additional attributes and/or arguments to show that any
 # of these values may be displayed via outputs.
-
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
 
 # Attribute Reference: EC2 Instance Public IP
 # The named assigned is arbitrary and may be any descript naming of your choice

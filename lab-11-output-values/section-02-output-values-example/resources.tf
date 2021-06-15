@@ -1,6 +1,6 @@
 # Terraform Block
 terraform {
-  required_version = "~> 0.15.4"
+  required_version = "~> 1.0.0"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -15,15 +15,15 @@ provider "aws" {
   profile = "default"
 }
 
-####Note regarding lab usage of and the Resource blocks#########
+####Note regarding lab usage and the Resource blocks#########
 ####Replace all references to lab Pod Number 0 with your unqiue, assigned pod number
-####Example - terraform-key-0 - replace both the key value with your own pod number such
-#### as (terraform-key-1)
+####Example - terraform-key-0 - replace the key value with your own pod number such
+#### as "terraform-key-1" for student pod #1
 ####If preferred and for expidency/precision - considering doing a replace all such as - replace all 
 ####occurances of -0 with -1
 
 # Create Security Group - SSH Traffic
-resource "aws_security_group" "vpc-ssh" {
+resource "aws_security_group" "vpc-ssh-0" {
   name        = "vpc-ssh-0"
   description = "Dev VPC SSH"
   ingress {
@@ -43,7 +43,7 @@ resource "aws_security_group" "vpc-ssh" {
 }
 
 # Create Security Group - Web Traffic
-resource "aws_security_group" "vpc-web" {
+resource "aws_security_group" "vpc-web-0" {
   name        = "vpc-web-0"
   description = "Dev VPC Web"
 
@@ -78,7 +78,7 @@ resource "aws_instance" "my-ec2-vm" {
   instance_type          = var.ec2_instance_type
   key_name               = "terraform-key-0"
   user_data              = file("apache-install.sh")
-  vpc_security_group_ids = [aws_security_group.vpc-ssh.id, aws_security_group.vpc-web.id]
+  vpc_security_group_ids = [aws_security_group.vpc-ssh-0.id, aws_security_group.vpc-web-0.id]
   tags = {
     "Name" = "web-server-0"
   }
