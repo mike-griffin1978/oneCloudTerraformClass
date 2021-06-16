@@ -21,8 +21,3 @@ provider "aws" {
   # key will be utilized and in this case the "default" account auth details will be used
   profile = "default"
 }
-
-/*
-Note-1:  AWS Credentials Profile (profile = "default") configured on your local desktop terminal  
-$HOME/.aws/credentials
-*/
