@@ -83,7 +83,8 @@ https://1cloudusers.signin.aws.amazon.com/console
 
 *Change Directory into Section Sub-Directory Containing Terraform Manifest*
 ```
- cd oneCloudTerraformClass/ cd lab-02-basic-commands/section-02-01-workflow 
+ cd oneCloudTerraformClass/ 
+ cd lab-02-basic-commands/section-02-01-workflow 
 ```
 *Open the Current Manifest, Explore Contents, and Make Per Pod Edits*
 
@@ -123,8 +124,9 @@ https://1cloudusers.signin.aws.amazon.com/console
 -   Within the same directory utilized in the prior section (lab-02-basic-commands/section-02-01-workflow) - which is where our Terraform manifest for this lab exist and where “terraform init” has now initialized our provider - issue the “terraform validate” command
 -   The validate command will ensure that there are no syntaxical issues with our manifest
 -   As depicted below - we should receive validation that there are no problems with our manifest file
-
-| terraform validate |
+```
+ terraform validate 
+```
 |--------------------|
 
 ![](media/53d53e8accb84156f2ba680c7548b258.png)
@@ -137,7 +139,9 @@ https://1cloudusers.signin.aws.amazon.com/console
 -   The plan command creates a execution plan and displays to the console the action type (in this case create) and the resources/specifications that will be implemented
 -   In our utilization of the plan command - the execution is being used to display to the terminal the resources that would be created when/if the Terraform manifest file were actually implemented. The plan command does not actually create any resources in AWS but rather displays the intended invokes.
 
-| terraform plan |
+```
+terraform plan 
+```
 |----------------|
 
 -   Output truncated to only display initial dialog of the plan execution
@@ -151,8 +155,9 @@ https://1cloudusers.signin.aws.amazon.com/console
 -   Reviewing the last couple of execution steps - the “terraform plan” command execution displays the intended resource creation and once we are comfortable with that intent the “terraform apply” command is executed to proceed with actual resource creation in the provider (AWS)
 -   During command execution - the apply command will pause and prompt the user with a ““Do you want to perform these actions?”” prompt. Respond with a “yes” to this prompt.
 -   Note that it may take 30-60 seconds for the resource creation to complete as depicted in the final screenshot below
-
-| terraform apply |
+```
+terraform apply
+```
 |-----------------|
 
 ![Graphical user interface, application Description automatically generated](media/558dfa87afb7fa103f99432003d9099e.png)
@@ -185,7 +190,9 @@ https://1cloudusers.signin.aws.amazon.com/console
 -   The user will be prompted with a confirmation to proceed \> respond “yes” to this prompt
 -   Note that a delay of 30-60 seconds is expected during the destroy process as shown in the final depiction below
 
-| terraform destroy |
+```
+terraform destroy
+```
 |-------------------|
 
 ![Graphical user interface, text Description automatically generated](media/db050404de9e1193552c73ae560743c3.png)
