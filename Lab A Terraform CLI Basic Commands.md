@@ -39,9 +39,9 @@ You should see a list of S3 buckets
 Issue the following commands to clone the remote repo:
 
 ```
-rm -rf oneCloudTerraformClass/
+rm -rf SRE-TF/
 
-git clone https://github.com/1CLD-US/oneCloudTerraformClass
+git clone https://github.com/1CLD-US/SRE-TF
 ```
 **Confirm access to AWS Console  
 **● Validate access to lab AWS console instance by navigating to the following URL within a  
@@ -83,7 +83,7 @@ https://1cloudusers.signin.aws.amazon.com/console
 
 *Change Directory into Section Sub-Directory Containing Terraform Manifest*
 ```
- cd oneCloudTerraformClass/ 
+ cd SRE-TF/ 
  cd lab-02-basic-commands/section-02-01-workflow 
 ```
 *Open the Current Manifest, Explore Contents, and Make Per Pod Edits*
