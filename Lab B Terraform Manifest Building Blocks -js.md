@@ -63,6 +63,9 @@
 -   Execute the “terraform init” command
 -   The init command should succeed based on the exact match of the running version and the equal to version specified in the manifest as depicted below
 
+```
+terraform init
+```
 | terraform init |
 |----------------|
 
