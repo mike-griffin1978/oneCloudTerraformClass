@@ -78,8 +78,9 @@ terraform init
 -   Execute the “terraform init” command anew
 -   We should observe a failure to initialize the manifest as the equal operator is utilized to force an exact Terraform version and our current Terraform CLI version does not meet this mandate
 
-| terraform init |
-|----------------|
+```
+terraform init
+```
 
 ![](media/db62748077a179dbd68fe21f26c3bffe.png)
 
