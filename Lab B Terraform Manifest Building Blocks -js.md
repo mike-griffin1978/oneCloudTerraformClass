@@ -277,7 +277,7 @@
 
 *Open the Current Manifest and Explore Contents*
 
-| Open the following file in your local code editor for this section: rproviders-block.tf |
+| Open the following file in your local code editor for this section: providers-block.tf |
 |-----------------------------------------------------------------------------------------|
 
 | Within this section our focus will be on the following code and a simplistic providers block The Terraform manifest file is commented thoroughly providing details of each new statement introduced As the intent is to build upon previously introduced code - working towards a fully functional manifest - the prior lab’s Terraform block is included within source code To ensure clarity on the code segments as we progress - consider the relationships thus far as: Terraform Block - established Terraform version (optional), required providers and their software locations/version Provider Block - requisite details to connect to required providers declared previously (in Terraform block) such as authentication info to allow integration with provider |
