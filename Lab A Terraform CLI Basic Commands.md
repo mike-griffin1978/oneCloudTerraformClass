@@ -5,7 +5,7 @@
 **SSH JumpHosts: sre-jump.1cld.us**
 
 **usernames:**
-**s1**
+s1
 **s2**
 **s3**
 **s4**
