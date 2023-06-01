@@ -24,9 +24,7 @@
 ```
 *aws configure*
 ```
-*AWS Access Key ID [None]: AKIA3BYOZGLRBNN2UVMD*
 
-*AWS Secret Access Key [None]: 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*
 
 *Default region name [None]: us-east-1*
 
