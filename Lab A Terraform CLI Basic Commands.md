@@ -5,23 +5,35 @@
 **SSH JumpHosts: sre-jump.1cld.us**
 
 **usernames:**
+
 **s1**
+
 **s2**
+
 **s3**
+
 **s4**
+
 **through**
+
 **s24**
+
 **password: SRE-2023!**
 
 ## Configure Aws security:
-
+```
 *aws configure*
+```
 *AWS Access Key ID [None]: AKIA3BYOZGLRBNN2UVMD*
-*AWS Secret Access Key [None]: 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*
-*Default region name [None]: us-east-1*
-*Default output format [None]: json*
-aws s3 ls
 
+*AWS Secret Access Key [None]: C/nTLBUVq03PWhoSTMAQn6FwScr3cQ+5wXtj2rsd*
+
+*Default region name [None]: us-east-1*
+
+*Default output format [None]: json*
+```
+aws s3 ls
+```
 You should see a list of S3 buckets
 
 Issue the following commands to clone the remote repo:
