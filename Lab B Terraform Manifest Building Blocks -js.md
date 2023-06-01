@@ -1,6 +1,6 @@
-# Lab3 - **Fundamental Manifest Section - Terraform Block**
+# Lab3 - Fundamental Manifest Section - Terraform Block
 
-## **Section-01: Lab Overview**
+## Section-01: Lab Overview
 
 -   Within the next several labs we will deeply explore the primary code blocks within Terraform files/manifest including individual explorations of the Terraform, Provider, and Resources blocks
 -   Within this lab we will thoroughly explore the Terraform Block of our HashiCorp Configuration Language (HCL) based manifests
@@ -13,10 +13,10 @@
 
 ![](media/38c677e51d1f3e6e9d747ac8346a1a00.png)
 
-## **Section-02: Terraform Block Template**
+## Section-02: Terraform Block Template
 
-| *Section Overview*  The Terraform block of our manifest files contain the following elements: Required Terraform Version - while it is not required - it is recommended to include Terraform versions supported by the manifest. This ensures that the manifest is only executed utilizing Terraform versions it was authored/tested against. Required Providers and Required Provider Versions - our example provider is AWS and we may additionally stipulate the required/supported version of the Terraform AWS provider The objective of this section is to introduce a simplistic Terraform block template There will be no execution of the code within this section as we review the template from a high level but will execute manifest with only a Terraform block isolated in the other sections of this lab |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Section Overview* The Terraform block of our manifest files contain the following elements: Required Terraform Version - while it is not required - it is recommended to include Terraform versions supported by the manifest. This ensures that the manifest is only executed utilizing Terraform versions it was authored/tested against. Required Providers and Required Provider Versions - our example provider is AWS and we may additionally stipulate the required/supported version of the Terraform AWS provider The objective of this section is to introduce a simplistic Terraform block template There will be no execution of the code within this section as we review the template from a high level but will execute manifest with only a Terraform block isolated in the other sections of this lab |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 *Subdirectory for Lab Section*
 
@@ -24,8 +24,8 @@
 
 *Open the Current Manifest and Explore Contents*
 
-| Open the following file in your local code editor for this section:  terraform-block-template.tf |
-|--------------------------------------------------------------------------------------------------|
+| Open the following file in your local code editor for this section: terraform-block-template.tf |
+|-------------------------------------------------------------------------------------------------|
 
 -   In this Terraform block template \> the AWS provider that will be used in all subsequent labs is included along with a “random” provider
 -   The primary objective in inclusion of the “random” provider is simply to demonstrate the formatting when multiple required providers exist
@@ -33,10 +33,10 @@
 
 ![](media/fb9ccabe15da7728516b061cf671d0cd.png)
 
-## **Section-03: Terraform Block - Require Terraform Version**
+## Section-03: Terraform Block - Require Terraform Version
 
-| *Section Overview*  The required_version statement of the Terraform fundamental block focuses on the underlying Terraform CLI installed on PC/Server platform executing the manifest If the running version of Terraform on the platform doesn't match the constraints specified in your terraform block - Terraform will produce an error and exit without taking any further action This is a mechanism to ensure that there are not compatibility issues with the Terraform version developed under and the Terraform version we are attempting to invoke the manifest with In this lab we will experiment with changing the versions specified in the Terraform block and issuing “terraform init” and observe results Utilize the following Terraform document for a through discussion on operator types available (=, !=, \<, \>, etc): <https://www.terraform.io/docs/language/expressions/version-constraints.html> |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Section Overview* The required_version statement of the Terraform fundamental block focuses on the underlying Terraform CLI installed on PC/Server platform executing the manifest If the running version of Terraform on the platform doesn't match the constraints specified in your terraform block - Terraform will produce an error and exit without taking any further action This is a mechanism to ensure that there are not compatibility issues with the Terraform version developed under and the Terraform version we are attempting to invoke the manifest with In this lab we will experiment with changing the versions specified in the Terraform block and issuing “terraform init” and observe results Utilize the following Terraform document for a through discussion on operator types available (=, !=, \<, \>, etc): <https://www.terraform.io/docs/language/expressions/version-constraints.html> |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 *Subdirectory for Lab Section*
 
@@ -44,8 +44,8 @@
 
 *Open the Current Manifest and Explore Contents*
 
-| Open the following file in your local code editor for this section:  terraform-block.tf |
-|-----------------------------------------------------------------------------------------|
+| Open the following file in your local code editor for this section: terraform-block.tf |
+|----------------------------------------------------------------------------------------|
 
 *Terraform Manifest With Specific Terraform CLI Version Explained:*
 
@@ -53,7 +53,7 @@
 -   The “required_version” specification pertains to the Terraform CLI version and with the equality operator states \> the Terraform CLI version on the platform invoking the manifest must be EXACTLY “1.0.0”
 -   Note if this lab is being run in the future post new release/installation of the Terraform CLI \> the “required_version” statement must be updated to that current release to allow execution
 
-![](media/f5c270d5f3b2a79b2c2fbd832e598972.png)
+![A screenshot of a computer Description automatically generated with medium confidence](media/463801093c2ddd102015566fadd250ea.png)
 
 *Change Directory into Section Sub-Directory Containing Terraform Manifest Location*
 
@@ -90,10 +90,10 @@
 
 ![](media/61fd8aeb10c6793e170eaa0991a5f696.png)
 
-## **Section-04: Terraform Block - Require Provider Version**
+## Section-04: Terraform Block - Require Provider Version
 
-| *Section Overview*  The requied_providers specifies the external providers (example = AWS) required by the Terraform manifest. The statements map each provider name to a source address and a version constraint. As will be demonstrated in the labs that follow - when a provider is updated/changed - we must execute the “terraform init -upgrade” command which provokes a download of the specified provider file into the .terraform directory While the flag is -upgrade - this option is necessary whether the change to the provider is an upgrade or a downgrade Documentation location for the hashicorp/aws provider that is the subject of this lab guide: <https://registry.terraform.io/providers/hashicorp/aws/latest/docs> |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Section Overview* The requied_providers specifies the external providers (example = AWS) required by the Terraform manifest. The statements map each provider name to a source address and a version constraint. As will be demonstrated in the labs that follow - when a provider is updated/changed - we must execute the “terraform init -upgrade” command which provokes a download of the specified provider file into the .terraform directory While the flag is -upgrade - this option is necessary whether the change to the provider is an upgrade or a downgrade Documentation location for the hashicorp/aws provider that is the subject of this lab guide: <https://registry.terraform.io/providers/hashicorp/aws/latest/docs> |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 *Subdirectory for Lab Section*
 
@@ -106,13 +106,13 @@
 
 *Open the Current Manifest and Explore Contents*
 
-| Open the following file in your local code editor for this section:  terraform-block.tf |
-|-----------------------------------------------------------------------------------------|
+| Open the following file in your local code editor for this section: terraform-block.tf |
+|----------------------------------------------------------------------------------------|
 
-| *Notes Regarding Current Manifest required_providers aws Section*  Source Specification The manifest source is specified as “hashicorp/aws''. When the source is hashicorp this shorthand notation may be used. The short hand source specification states that the Hashicorp registry should be used to download the AWS provider. The Hashicorp registry long form location for the AWS provider is as follows: <https://registry.terraform.io/providers/hashicorp/aws/latest> If a non-Hashicorp registry were used the long form specification would be necessary.  Version Specification The manifest has an AWS version specified as “\~\> 3.0” When the manifest is initialized Terraform will search the registry for the latest version available in the 3.X train and install that latest revision |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+![A screen shot of a computer program Description automatically generated with low confidence](media/cdd6f84c3e36056f0d1a825b6f01c288.png)
 
-![](media/ef1198808e8bb27ad534801d2a5401a8.png)
+| *Notes Regarding Current Manifest required_providers aws Section* Source Specification The manifest source is specified as “hashicorp/aws''. When the source is hashicorp this shorthand notation may be used. The short hand source specification states that the Hashicorp registry should be used to download the AWS provider. The Hashicorp registry long form location for the AWS provider is as follows: <https://registry.terraform.io/providers/hashicorp/aws/latest> If a non-Hashicorp registry were used the long form specification would be necessary. Version Specification The manifest has an AWS version specified as “\~\> 3.0” When the manifest is initialized Terraform will search the registry for the latest version available in the 3.X train and install that latest revision |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 *Terraform Manifest Initialization with Provider Version “\~\>” Operator*
 
@@ -207,8 +207,8 @@
 
 *Random Provider*
 
-| *Random Provider Overview*  The Terraform random provider is defined as follows within the Terraform registry’s provider specific documentation  ![](media/4ddae05061542d2b0a9bddb26ccd9031.png)  A use case for the random provider would be to generate randomized, unique IDs for created resources We do not need to be overly concerned further about the usage and details of the random provider as it will not be used in our manifest in future labs We are simply utilizing the random provider in this lab to further explore the version operators |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Random Provider Overview* The Terraform random provider is defined as follows within the Terraform registry’s provider specific documentation ![](media/4ddae05061542d2b0a9bddb26ccd9031.png) A use case for the random provider would be to generate randomized, unique IDs for created resources We do not need to be overly concerned further about the usage and details of the random provider as it will not be used in our manifest in future labs We are simply utilizing the random provider in this lab to further explore the version operators |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 -   Within our current manifest the random provider version is set to a specific version (I.e. version = "3.0.1")
 -   While we allowed the AWS provider to download/install the latest version of the 3.0 train using the operator of “\~\>” - the random provider version is hardcoded via the “=” operator and that specific version will be downloaded/installed
@@ -246,16 +246,16 @@
 
 ![](media/f4b1d2ff7e687d02e4230b5af5bf4be8.png)
 
-# Lab4 - **Fundamental Manifest Section - Providers Block**
+# Lab4 - Fundamental Manifest Section - Providers Block
 
-## **Section-01: Overview**
+## Section-01: Overview
 
 *Section Overview*
 
 -   Within this lab we will thoroughly explore the Providers Block of our HashiCorp Configuration Language (HCL) based manifests
 
-| *Depth of Terraform Providers*  While the focus of this class and associated labs center on Terraform integrations with the AWS provider - a brief overview of the depth and scope of available providers is useful and illuminating for future needs Visit the following location for a listing of available Terraform providers: <https://registry.terraform.io/> From the landing page \> select the “Browse Providers” option as depicted below  ![](media/0c237ccf2d7b135b9a963ccaa2c63558.png)  The resultant page provides a quick glimpse into the scope and depth of provider integrations available. Spanning across all major public cloud providers (AWS/Google Cloud/Azure) and into specific technologies like Cisco ASA’s, Active Directory, and DNS. Our labs will now proceed with the AWS provider exploration. We will revisit the registry documentation for AWS as the labs progress as knowledge of where to find provider specifications, options, and code examples is crucial for your Terraform projects.  ![](media/cc770a8baa8d34bc932306fddd2fba50.png) |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Depth of Terraform Providers* While the focus of this class and associated labs center on Terraform integrations with the AWS provider - a brief overview of the depth and scope of available providers is useful and illuminating for future needs Visit the following location for a listing of available Terraform providers: <https://registry.terraform.io/> From the landing page \> select the “Browse Providers” option as depicted below ![](media/0c237ccf2d7b135b9a963ccaa2c63558.png) The resultant page provides a quick glimpse into the scope and depth of provider integrations available. Spanning across all major public cloud providers (AWS/Google Cloud/Azure) and into specific technologies like Cisco ASA’s, Active Directory, and DNS. Our labs will now proceed with the AWS provider exploration. We will revisit the registry documentation for AWS as the labs progress as knowledge of where to find provider specifications, options, and code examples is crucial for your Terraform projects. ![](media/cc770a8baa8d34bc932306fddd2fba50.png) |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 *GitHub Directory Code Location and Guidance*
 
@@ -264,7 +264,7 @@
 
 ![](media/cf1334c8c282448824359cdbab6a260f.png)
 
-## **Section-02: Providers Block Template**
+## Section-02: Providers Block Template
 
 *Subdirectory for Lab Section*
 
@@ -277,19 +277,19 @@
 
 *Open the Current Manifest and Explore Contents*
 
-| Open the following file in your local code editor for this section:  rproviders-block.tf  |
-|-------------------------------------------------------------------------------------------|
+| Open the following file in your local code editor for this section: rproviders-block.tf |
+|-----------------------------------------------------------------------------------------|
 
 | Within this section our focus will be on the following code and a simplistic providers block The Terraform manifest file is commented thoroughly providing details of each new statement introduced As the intent is to build upon previously introduced code - working towards a fully functional manifest - the prior lab’s Terraform block is included within source code To ensure clarity on the code segments as we progress - consider the relationships thus far as: Terraform Block - established Terraform version (optional), required providers and their software locations/version Provider Block - requisite details to connect to required providers declared previously (in Terraform block) such as authentication info to allow integration with provider |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 ![](media/7687ef29275f3cf1dc72b7f28f238658.png)
 
-| *Authentication Types*  Within the following AWS provider documentation the snippet depicted provides guidance into our selection of an authentication type: <https://registry.terraform.io/providers/hashicorp/aws/latest/docs>  ![Graphical user interface, text, application, email Description automatically generated](media/de1c9d9ad3111f5b41bd1b5598742fa7.png) |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Authentication Types* Within the following AWS provider documentation the snippet depicted provides guidance into our selection of an authentication type: <https://registry.terraform.io/providers/hashicorp/aws/latest/docs> ![Graphical user interface, text, application, email Description automatically generated](media/de1c9d9ad3111f5b41bd1b5598742fa7.png) |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-| *Shared Credentials File*  Within our example Providers block the use of the Shared Credentials File methodology will be utilized The Shared Credentials File comes from the AWS Configure utility which we ran during the AWS CLI setup As discussed in the AWS CLI setup - when the AWS Configure utility is run and user input is collected for access key ID, secret access key, region, and default output type - those settings are stored within an “.aws” directory within the user’s home directory. Examples of these settings are depicted below. The stored credentials in these files - and specifically the default account - are utilized within the Terraform Providers block and called via the “profile = "default" declaration  ![](media/b587b3382bbc814c18455b076c8f60a7.png)  ![](media/ebf5f66ce15c289fa4a616a5cf42eea2.png) |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Shared Credentials File* Within our example Providers block the use of the Shared Credentials File methodology will be utilized The Shared Credentials File comes from the AWS Configure utility which we ran during the AWS CLI setup As discussed in the AWS CLI setup - when the AWS Configure utility is run and user input is collected for access key ID, secret access key, region, and default output type - those settings are stored within an “.aws” directory within the user’s home directory. Examples of these settings are depicted below. The stored credentials in these files - and specifically the default account - are utilized within the Terraform Providers block and called via the “profile = "default" declaration ![](media/b587b3382bbc814c18455b076c8f60a7.png) ![](media/ebf5f66ce15c289fa4a616a5cf42eea2.png) |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 *Workflow Command Execution*
 
@@ -315,7 +315,7 @@
 | Note that the terraform init, validate, and plan perform no actual validation of the connection/authentication in the provider (AWS in this circumstance) We could delete the .aws directory - which holds our AWS credentials - and “terraform plan” would succeed The subsequent sections in this lab will add resources - while not the focus of our Providers block exploration - for the purpose of validating provider connection/authentication |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-## **Section-03: Providers Block with Resources**
+## Section-03: Providers Block with Resources
 
 *Subdirectory for Lab Section*
 
@@ -331,13 +331,13 @@
 | Within this section our focus is on the Providers block with the introduction of a simple resource AWS resource creation and the Resource block will be explored in much deeper depth in subsequent labs The intent of this lab is to reinforce the Provider block syntax/usage and allow a resource to be created to ensure further that the provider block is configured properly and allows the resource creation in the specific AWS region (us-east-1) The Terraform manifest file is commented thoroughly providing details of each new statement introduced |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-| Open the following file in your local code editor for this section:  providers-block.tf  Edit the code as necessary for your own Student Pod as instructed in the commented section of the manifest that begins with - “\#\#\#Note regarding lab usage”. Visual highlights are provided in the depictions below for further clarification of the location of necessary per pod edits. |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Open the following file in your local code editor for this section: providers-block.tf Edit the code as necessary for your own Student Pod as instructed in the commented section of the manifest that begins with - “\#\#\#Note regarding lab usage”. Visual highlights are provided in the depictions below for further clarification of the location of necessary per pod edits. |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 ![](media/12d61362adfda5ca2fd8af368804a432.png)
 
-| *AWS Resource Specifications*  While exploration of AWS resources is not the primary focus of this lab we introduce resource documentation/specifications briefly and reinforce such concepts later Pertaining to the AWS VPC resource in the above Terraform manifest - the specification may be explored via the following: Navigate to the Terraform Registry Providers page and select AWS <https://registry.terraform.io/browse/providers> From the AWS Provider page \> select Documentation as depicted below  ![Graphical user interface, text, application, Teams Description automatically generated](media/3d309f228b7551bcffb7e2191ff4e204.png)  From the AWS documentation page \> scroll down on the Resources types listed in the left hand menu \> isolating “VPC” (open if necessary) \> Resources (open if necessary) \> aws_vpc Navigation described above is depicted below for additional clarity As our desire within this Terraform manifest is to create a VPC - aws_vpc is the resource of interest Once the resource is opened - explore the Basic Usage example Further explore the Argument Reference which specifies Required and Optional arguments. Note that we have specified the only required argument in our manifest file (cidr_block)  ![Graphical user interface, application, Teams Description automatically generated](media/b12e690c7612ebbc513e0d16cb8b749a.png) |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *AWS Resource Specifications* While exploration of AWS resources is not the primary focus of this lab we introduce resource documentation/specifications briefly and reinforce such concepts later Pertaining to the AWS VPC resource in the above Terraform manifest - the specification may be explored via the following: Navigate to the Terraform Registry Providers page and select AWS <https://registry.terraform.io/browse/providers> From the AWS Provider page \> select Documentation as depicted below ![Graphical user interface, text, application, Teams Description automatically generated](media/3d309f228b7551bcffb7e2191ff4e204.png) From the AWS documentation page \> scroll down on the Resources types listed in the left hand menu \> isolating “VPC” (open if necessary) \> Resources (open if necessary) \> aws_vpc Navigation described above is depicted below for additional clarity As our desire within this Terraform manifest is to create a VPC - aws_vpc is the resource of interest Once the resource is opened - explore the Basic Usage example Further explore the Argument Reference which specifies Required and Optional arguments. Note that we have specified the only required argument in our manifest file (cidr_block) ![Graphical user interface, application, Teams Description automatically generated](media/b12e690c7612ebbc513e0d16cb8b749a.png) |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 *Workflow Command Execution*
 
@@ -414,7 +414,7 @@
 
 ![Graphical user interface, text Description automatically generated](media/b14595e47a940e90974aaa175952c2b4.png)
 
-## **Section-04: Providers Block with Multiple Providers**
+## Section-04: Providers Block with Multiple Providers
 
 *Subdirectory for Lab Section*
 
@@ -432,8 +432,8 @@
 | Two provider blocks exist in this code sample One provider block allows resource creation in the AWS “us-east-1” region while the other provider block allows resource creation in the AWS “us-east-2” region The introduction of the alias command will allow the calling of the non-default provider as desired |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-| Open the following file in your local code editor for this section:  providers-block.tf  Edit the code as necessary for your own Student Pod as instructed in the commented section of the manifest that begins with - “\#\#\#Note regarding lab usage”. Visual highlights are provided in the depictions below for further clarification of the location of necessary per pod edits. |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Open the following file in your local code editor for this section: providers-block.tf Edit the code as necessary for your own Student Pod as instructed in the commented section of the manifest that begins with - “\#\#\#Note regarding lab usage”. Visual highlights are provided in the depictions below for further clarification of the location of necessary per pod edits. |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 *![Text Description automatically generated](media/03afcb654210adbd6ae0409ff32ba6ab.png)*
 
@@ -511,9 +511,9 @@
 
 ![Text Description automatically generated](media/5b17aa938f626b1de5eef8b1800e8e87.png)
 
-# Lab5 - **Fundamental Manifest Section - Resource Block**
+# Lab5 - Fundamental Manifest Section - Resource Block
 
-## **Section-01: Overview**
+## Section-01: Overview
 
 *Section Overview*
 
@@ -526,7 +526,7 @@
 
 ![A screenshot of a computer Description automatically generated with medium confidence](media/a38448d15f478214d1fd8a21821317ff.png)
 
-## **Section-02: Resource Block Template**
+## Section-02: Resource Block Template
 
 *Subdirectory for Lab Section*
 
@@ -542,8 +542,8 @@
 | Within this section we use focus on a rather simplistic Resource block to break down the primary statements and intents The Terraform manifest file is commented thoroughly within the Resource block providing details of each new statement introduced As the intent is to build upon previously introduced code - working towards a fully functional manifest - the prior lab’s Terraform and Provider block are included within source code To ensure clarity on the code segments as we progress - consider the relationships thus far as: Terraform Block - established Terraform version (optional), required providers and their software locations/version Provider Block - requisite details to connect to required providers declared previously (in Terraform block) such as authentication info to allow integration with provider Resource Block - with only a single Provider (which is the default provider with no alias specification) the resources within this code block will be defined thoroughly and invoked within that default provider (AWS us-east-1) |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-| Open the following file in your local code editor for this section:  resources-block.tf  Edit the code as necessary for your own Student Pod as instructed in the commented section of the manifest that begins with - “\#\#\#Note regarding lab usage”. Visual highlights are provided in the depictions below for further clarification of the location of necessary per pod edits. |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Open the following file in your local code editor for this section: resources-block.tf Edit the code as necessary for your own Student Pod as instructed in the commented section of the manifest that begins with - “\#\#\#Note regarding lab usage”. Visual highlights are provided in the depictions below for further clarification of the location of necessary per pod edits. |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 ![Text Description automatically generated](media/395da831634b1929636e0bae6e2a6cc8.png)
 
@@ -623,10 +623,10 @@
 | Do NOT use the “terraform destroy” command within this section as we will use the pre-existing EC2 resource as the target and demonstration of a Terraform upgrade activity in the next section |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-## **Section-03: Resource Update in Place**
+## Section-03: Resource Update in Place
 
-| *Section Overview*  Within this section our focus is a minor update of the prior section’s Terraform manifest When deployed the minor update will provoke a Terraform “Update in Place” sequence The essence of an “Update in Place” resource modification is provoking a change that does not interrupt resource service and does not require replacement of the instance Only certain change activities are capable of Update in Place - typically minor updates - whereas more significant updates such as a change in hardware/instance type will require a “Destroy and Replace” activity type which will be the topic of the next section |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Section Overview* Within this section our focus is a minor update of the prior section’s Terraform manifest When deployed the minor update will provoke a Terraform “Update in Place” sequence The essence of an “Update in Place” resource modification is provoking a change that does not interrupt resource service and does not require replacement of the instance Only certain change activities are capable of Update in Place - typically minor updates - whereas more significant updates such as a change in hardware/instance type will require a “Destroy and Replace” activity type which will be the topic of the next section |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 *Subdirectory for Lab Section*
 
@@ -634,8 +634,8 @@
 
 *Open the Section’s Terraform Manifest and Explore Contents*
 
-| As the file from last section (Lab5 \> Section-02) will be utilized in this section to demonstrate a Terraform Resource Update - it is likely the file is open within your code editor.  If the file has been closed - re-open the Terraform file in the code editor. |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| As the file from last section (Lab5 \> Section-02) will be utilized in this section to demonstrate a Terraform Resource Update - it is likely the file is open within your code editor. If the file has been closed - re-open the Terraform file in the code editor. |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 -   Make the following minor edit to the resource \> tags block
 -   Edit is represented in the depiction that follows
@@ -680,8 +680,8 @@
 
 ![Graphical user interface, text Description automatically generated](media/e6bab811f1e8fc8f1b72218e24942af6.png)
 
-| *Review of Desired State and Current State*  The Update in Place operation allows a review of concepts within Terraform referred to as: Desired State The state represented in the .tfstate file in the local Terraform directory Current State The actual state of the resource as it exists within AWS We will ensure that both the Desired State and the Current State were updated properly by the Update in Place procedure |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Review of Desired State and Current State* The Update in Place operation allows a review of concepts within Terraform referred to as: Desired State The state represented in the .tfstate file in the local Terraform directory Current State The actual state of the resource as it exists within AWS We will ensure that both the Desired State and the Current State were updated properly by the Update in Place procedure |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 *Desired State*
 
@@ -710,10 +710,10 @@
 | Do NOT use the “terraform destroy” command within this section as the pre-existing EC2 resource will be utilized to explore the concept of Terraform “Destroy and Recreate” in the next section |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-## **Section-04: Resource Destroy and Replace**
+## Section-04: Resource Destroy and Replace
 
-| *Section Overview*  Within this section our focus is a significant update - change of the EC2 instance’s Availability Zone - of the prior section’s Terraform manifest and active resource When deployed the significant update will provoke a Terraform “Destroy and Replace” sequence |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Section Overview* Within this section our focus is a significant update - change of the EC2 instance’s Availability Zone - of the prior section’s Terraform manifest and active resource When deployed the significant update will provoke a Terraform “Destroy and Replace” sequence |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 *Subdirectory for Lab Section*
 
@@ -721,11 +721,11 @@
 
 *Open the Section’s Terraform Manifest and Explore Contents*
 
-| As the file from last section (Lab5 \> Section-02) will be utilized in this section to demonstrate a Terraform Resource Update - it is likely the file is open within your code editor.  If the file has been closed - re-open the Terraform file in the code editor.  |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| As the file from last section (Lab5 \> Section-02) will be utilized in this section to demonstrate a Terraform Resource Update - it is likely the file is open within your code editor. If the file has been closed - re-open the Terraform file in the code editor. |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-| *Further Comparison of “Update in Place” and “Destroy and Replace” Activities*  Update in Place: In the previous section we introduced a change to a Tag value in the Terraform manifest. The tag value change is an example of an update that Terraform may provoke on a running AWS EC2 instance without causing interruption to the resource by simply updating a minor attribute This type of non-impactful change invoked in an “Update in Place” methodology Destroy and Replace: In this section we will introduce a more impactful change When the AWS Availability Zone of the EC2 resource is edited in this lab section - AWS must tear down the prior instance and build a new compute instance in the new Availability Zone Impactful, service impacting, replacement events are thus referred to as “Destroy and Replace” |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Further Comparison of “Update in Place” and “Destroy and Replace” Activities* Update in Place: In the previous section we introduced a change to a Tag value in the Terraform manifest. The tag value change is an example of an update that Terraform may provoke on a running AWS EC2 instance without causing interruption to the resource by simply updating a minor attribute This type of non-impactful change invoked in an “Update in Place” methodology Destroy and Replace: In this section we will introduce a more impactful change When the AWS Availability Zone of the EC2 resource is edited in this lab section - AWS must tear down the prior instance and build a new compute instance in the new Availability Zone Impactful, service impacting, replacement events are thus referred to as “Destroy and Replace” |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 -   Make the following edit to the resource \> availability_zone attribute
 -   Edit is represented in the depiction that follows
@@ -765,8 +765,8 @@
 
 ![Graphical user interface, application Description automatically generated](media/6554cce663e04a04e78f755bfe0182ff.png)
 
-| *Review of Desired State and Current State*  The Destroy and Replace operation allows additional review of concepts within Terraform State which again are referred to as: Desired State The state represented in the .tfstate file in the local Terraform directory Current State The actual state of the resource as it exists within AWS We will ensure that both the Desired State and the Current State were updated properly by the Destroy and Replace procedure |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Review of Desired State and Current State* The Destroy and Replace operation allows additional review of concepts within Terraform State which again are referred to as: Desired State The state represented in the .tfstate file in the local Terraform directory Current State The actual state of the resource as it exists within AWS We will ensure that both the Desired State and the Current State were updated properly by the Destroy and Replace procedure |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 *Desired State*
 
