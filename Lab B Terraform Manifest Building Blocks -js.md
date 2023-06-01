@@ -66,8 +66,6 @@
 ```
 terraform init
 ```
-| terraform init |
-|----------------|
 
 ![](media/558bdfd818082aa14f1d77f37a03da04.png)
 
