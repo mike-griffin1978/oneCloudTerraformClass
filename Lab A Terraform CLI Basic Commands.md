@@ -82,11 +82,9 @@ https://1cloudusers.signin.aws.amazon.com/console
 ![Graphical user interface, text, application, email Description automatically generated](media/3a13384f4527be39e84ddae6c6261354.png)
 
 *Change Directory into Section Sub-Directory Containing Terraform Manifest*
-
-| cd oneCloudTerraformClass/ cd lab-02-basic-commands/section-02-01-workflow |
-|----------------------------------------------------------------------------|
-|                                                                            |
-
+```
+ cd oneCloudTerraformClass/ cd lab-02-basic-commands/section-02-01-workflow 
+```
 *Open the Current Manifest, Explore Contents, and Make Per Pod Edits*
 
 | Open the following file in your use “nano” on jumphost (or your preferred editor) for this section:  nano ec2-instance.tf  Edit the code as necessary for your own Student Pod as instructed in the commented section of the manifest that begins with - “\#\#\#Note regarding lab usage”. Visual highlights are provided in the depictions below for further clarification of the location of necessary per pod edits. |
@@ -108,8 +106,9 @@ https://1cloudusers.signin.aws.amazon.com/console
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 -   From within the navigated to directory of the prior step \> execute the command “terraform init”
-
-| terraform init |
+```
+ terraform init 
+ ```
 |----------------|
 
 ![Text Description automatically generated](media/2c4a65dacaffadb212eb6c8eb5253107.png)
