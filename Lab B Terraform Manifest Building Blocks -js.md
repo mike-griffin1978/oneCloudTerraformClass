@@ -29,7 +29,7 @@
 
 -   In this Terraform block template \> the AWS provider that will be used in all subsequent labs is included along with a “random” provider
 -   The primary objective in inclusion of the “random” provider is simply to demonstrate the formatting when multiple required providers exist
--   The inclusion of version requirements for both Terraform and the required providers are included and the operators utilized (I.e. “\~\>” and “=”) are detailed in the next section
+-   The inclusion of version requirements for both Terraform and the required providers are included and the operators utilized (I.e. “\~\>” and “=”) are detailed in the next section 
 
 ![](media/fb9ccabe15da7728516b061cf671d0cd.png)
 
