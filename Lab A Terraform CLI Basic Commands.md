@@ -16,9 +16,6 @@
 
 **through**
 
-**s24**
-
-**password: SRE-2023!**
 
 ## Configure Aws security:
 ```
