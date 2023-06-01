@@ -38,10 +38,10 @@ You should see a list of S3 buckets
 
 Issue the following commands to clone the remote repo:
 
-rm -rf oneCloudTerraformClass/
+```rm -rf oneCloudTerraformClass/
 
 git clone https://github.com/1CLD-US/oneCloudTerraformClass
-
+```
 **Confirm access to AWS Console  
 **● Validate access to lab AWS console instance by navigating to the following URL within a  
 web browser  
