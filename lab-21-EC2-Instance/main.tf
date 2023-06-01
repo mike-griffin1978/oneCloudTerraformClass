@@ -45,7 +45,7 @@ resource "local_file" "inventory" {
       key_name = var.key_pair_name
     }
   )
-  filename = "/home/ubuntu/ansible/hosts.cfg"
+  filename = "~/ansible/hosts.cfg"
 }
 
 resource "local_file" "readme" {
@@ -56,7 +56,7 @@ resource "local_file" "readme" {
       PUBLIC_IP_ADDRESS = aws_instance.web.public_ip
     }
   )
-  filename = "./README.txt"
+  filename = "./VM-INFO.txt"
 }
 
 resource "local_file" "terraform_key_pair" {
@@ -66,7 +66,7 @@ resource "local_file" "terraform_key_pair" {
 }
 
 resource "local_file" "ansible_key_pair" {
-  filename = "/home/ubuntu/ansible/${var.key_pair_name}.pem"
+  filename = "~/ansible/${var.key_pair_name}.pem"
   file_permission = "0600"
   content = tls_private_key.keypair.private_key_pem
 }
