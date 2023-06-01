@@ -12,3 +12,8 @@ variable "owner" {
   type = string
   default = "PODX"
 }
+
+variable "key_pair_name" {
+  type = string
+  default = "sre_podx_key"
+}
