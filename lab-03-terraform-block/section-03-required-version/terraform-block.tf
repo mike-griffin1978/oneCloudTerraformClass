@@ -2,7 +2,7 @@
 # Lab assumes a current Terraform version of 1.0.0.  If the current version is not 1.0.0 - replace the
 # current version specific tests with that version
 terraform {
-  required_version = "~> 1.0.0"
+  required_version = "> 1.0.0"
 }
 
 /*
